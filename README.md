@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.com/cresokind/craftbeer-sensedia.svg?branch=master)](https://travis-ci.com/cresokind/craftbeer-sensedia)
 
 # Api para controle de Cervejas Artesanais
 
