@@ -39,8 +39,6 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("/api/beers/v1")
 public class BeerController {
 	
-	private static final Logger log = LoggerFactory.getLogger(BeerController.class);
-	
 	@Autowired
 	private BeerService beerService;
 	
@@ -60,14 +58,12 @@ public class BeerController {
 	@ApiOperation(value = "Buscar cerveja pelo ID")
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Response<BeerDto>> buscarCervejaPorId(@PathVariable("id") Long id) {
-		log.info("Buscando beer por id: {}", id);
 		
 		Response<BeerDto> response = new Response<BeerDto>();
 		
 		Optional<Beer> beer = this.beerService.buscarPorId(id);
 
 		if (!beer.isPresent()) {
-			log.info("Nenhuma cerveja encontrada com esse id: {}", id);
 			response.getErrors().add("Nenhuma cerveja encontrada com esse id: " + id);
 			return ResponseEntity.badRequest().body(response);
 		}
@@ -88,15 +84,12 @@ public class BeerController {
 			@RequestParam(value = "ord", defaultValue = "id") String ord,
 			@RequestParam(value = "dir", defaultValue = "DESC") String dir) {
 		
-		log.info("Buscando todas beers, página: {}", pag);
-		
 		Response<Page<BeerDto>> response = new Response<Page<BeerDto>>();
 
 		PageRequest pageRequest = new PageRequest(pag, this.qtdItensPorPagina, Direction.valueOf(dir), ord);
 		Page<Beer> beers = this.beerService.buscarTodasCervejas(pageRequest);
 		
 		if(!beers.hasContent()) {
-			log.info("Nenhuma cerveja cadastrada!");
 			response.getErrors().add("Nenhuma cerveja cadastrada!");
 			return ResponseEntity.badRequest().body(response);
 		}
@@ -120,8 +113,6 @@ public class BeerController {
 	public ResponseEntity<Response<BeerDto>> cadastrarCerveja(@Valid @RequestBody BeerDto beerDto,
 			BindingResult result) throws NoSuchAlgorithmException {
 		
-		log.info("Cadastrando Cerveja: {}", beerDto.toString());
-		
 		Response<BeerDto> response = new Response<BeerDto>();
 			
 		Beer beer = this.converterDtoParaObjBeer(beerDto, result);
@@ -129,7 +120,6 @@ public class BeerController {
 		this.validarDadosExistentes(beerDto, result);
 		
 		if (result.hasErrors()) {
-			log.error("Erro validando dados do cadastro da cerveja: {}", result.getAllErrors());
 			result.getAllErrors().forEach(error -> response.getErrors().add(error.getDefaultMessage()));
 			return ResponseEntity.badRequest().body(response);
 		}
@@ -154,8 +144,6 @@ public class BeerController {
 	@PutMapping(value = "/{id}", consumes = { "application/json" }, produces = { "application/json" })
 	public ResponseEntity<Response<BeerDto>> atualizarPorId(@PathVariable("id") Long id,
 			@Valid @RequestBody BeerDto beerDto, BindingResult result) throws NoSuchAlgorithmException {
-		
-		log.info("Atualizando cerveja: {}", beerDto.toString());
 		
 		Response<BeerDto> response = new Response<BeerDto>();
 
@@ -192,8 +180,6 @@ public class BeerController {
 	public ResponseEntity<Response<BeerDto>> atualizarParcialCervejaPorId(@PathVariable("id") Long id,
 			@RequestBody BeerDto beerDto, BindingResult result) throws NoSuchAlgorithmException {
 		
-		log.info("Atualizando cerveja: {}", beerDto.toString());
-		
 		Response<BeerDto> response = new Response<BeerDto>();
 
 		Optional<Beer> beerToUpdate = this.beerService.buscarPorId(id);
@@ -227,13 +213,10 @@ public class BeerController {
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Response<String>> removerBeer(@PathVariable("id") Long id) {
 		
-		log.info("Removendo cerveja: {}", id);
-		
 		Response<String> response = new Response<String>();
 		Optional<Beer> beer = this.beerService.buscarPorId(id);
 
 		if (!beer.isPresent()) {
-			log.info("Erro ao remover cerveja ID: {} não encontrado.", id);
 			response.getErrors().add("Não é possivel excluir o cadastro. Registro não encontrado para o id " + id);
 			return ResponseEntity.badRequest().body(response);
 		}
