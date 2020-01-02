@@ -61,10 +61,10 @@
 			<artifactId>h2</artifactId>
 		</dependency>
 		
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
-		</dependency> -->
+		</dependency>
 		
 		<!-- Lombok para reducão de escrita de codigo get e set -->
 		<dependency>

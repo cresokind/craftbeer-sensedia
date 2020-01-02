@@ -24,30 +24,25 @@ public class BeerServiceImpl implements BeerService{
 	private BeerRepository beerRepository;
 
 	public Optional<Beer> buscarPorId(Long id) {
-		log.info("Buscando uma cerveja por ID: {}", id);
 		return Optional.ofNullable(this.beerRepository.findById(id));
 	}
 	
 	public Optional<Beer> buscarCervejaPorNome(String name) {
-		log.info("Buscando uma cerveja por Descricao: {}", name);
 		return Optional.ofNullable(this.beerRepository.findByName(name));
 	}
 	
 	@CachePut("listarTodasCervejas")
 	public Beer cadastrar(Beer beer) {
-		log.info("Cadastrando/alterando uma cerveja {}", beer);
 		return this.beerRepository.save(beer);
 	}
 	
 	@CachePut("listarTodasCervejas")
 	public void remover(Long id) {
-		log.info("Apagamendo o cadastro da cerveja {}", id);
 		this.beerRepository.delete(id);
 	}
 
 	@Cacheable("listarTodasCervejas")
 	public Page<Beer> buscarTodasCervejas(PageRequest pageRequest) {
-		log.info("Buscando todas as cervejas cadastradas");
 		return this.beerRepository.findAll(pageRequest);
 	}
 
