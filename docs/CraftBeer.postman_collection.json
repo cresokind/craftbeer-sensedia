@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "a865cf48-2ee0-41cb-846d-0e83ad25a938",
+		"name": "CraftBeer",
+		"description": "Coleção para validar as urls da API - CraftBeer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Buscar cerveja pelo ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/beers/v1/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"beers",
+						"v1",
+						"1"
+					]
+				},
+				"description": "Retorna uma cerveja por um id."
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Todas Cervejas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/beers/v1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"beers",
+						"v1",
+						""
+					]
+				},
+				"description": "Busca todas as cervejas cadastradas"
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Cerveja",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Roleta Russa Session IPA 500ml\",\n\t\"ingredients\": \"Água, malte de cevada, lúpulos importados e levedura.\",\n\t\"alcoholContent\": 7.6,\n\t\"category\": \"IPA\",\n\t\"price\": 20.0\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/beers/v1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"beers",
+						"v1",
+						""
+					]
+				},
+				"description": "Requisição POST para cadastro de cerveja"
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Cerveja",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/beers/v1/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"beers",
+						"v1",
+						"1"
+					]
+				},
+				"description": "Requisição para apagar o registor da cerveja no bd"
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Cerveja",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Roleta Russa Session IPA 500ml\",\n\t\"ingredients\": \"Água, malte de cevada, lúpulos importados e levedura.\",\n\t\"alcoholContent\": 8.6,\n\t\"category\": \"IPA\",\n\t\"price\": 10.0\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/beers/v1/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"beers",
+						"v1",
+						"1"
+					]
+				},
+				"description": "Requisicao para alterar o cadastro de uma cerveja"
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Parcial Cerveja",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Roleta Russa Session IPA 500ml\",\n\t\"ingredients\": \"Água, malte de cevada, lúpulos importados e levedura.\",\n\t\"alcoholContent\": 8.6,\n\t\"category\": \"IPA\",\n\t\"price\": 10.0\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/beers/v1/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"beers",
+						"v1",
+						"1"
+					]
+				},
+				"description": "Metodo para alterar parcial o cadastro da cerveja"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
