@@ -25,7 +25,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/beers/v1/1",
+					"raw": "http://localhost:9000/beerhouse/api/beers/v1/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -61,7 +61,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/beers/v1/",
+					"raw": "http://localhost:9000/beerhouse/api/beers/v1/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -94,7 +94,7 @@
 					"raw": "{\n\t\"name\": \"Roleta Russa Session IPA 500ml\",\n\t\"ingredients\": \"Água, malte de cevada, lúpulos importados e levedura.\",\n\t\"alcoholContent\": 7.6,\n\t\"category\": \"IPA\",\n\t\"price\": 20.0\n}\n"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/beers/v1/",
+					"raw": "http://localhost:9000/beerhouse/api/beers/v1/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -127,7 +127,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/beers/v1/1",
+					"raw": "http://localhost:9000/beerhouse/api/beers/v1/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -160,7 +160,7 @@
 					"raw": "{\n\t\"name\": \"Roleta Russa Session IPA 500ml\",\n\t\"ingredients\": \"Água, malte de cevada, lúpulos importados e levedura.\",\n\t\"alcoholContent\": 8.6,\n\t\"category\": \"IPA\",\n\t\"price\": 10.0\n}\n"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/beers/v1/1",
+					"raw": "http://localhost:9000/beerhouse/api/beers/v1/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -193,7 +193,7 @@
 					"raw": "{\n\t\"name\": \"Roleta Russa Session IPA 500ml\",\n\t\"ingredients\": \"Água, malte de cevada, lúpulos importados e levedura.\",\n\t\"alcoholContent\": 8.6,\n\t\"category\": \"IPA\",\n\t\"price\": 10.0\n}\n"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/beers/v1/1",
+					"raw": "http://localhost:9000/beerhouse/api/beers/v1/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
