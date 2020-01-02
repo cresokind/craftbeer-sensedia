@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/cresokind/craftbeer-sensedia.svg?branch=master)](https://travis-ci.com/cresokind/craftbeer-sensedia)
+
 # Cadastro de cervejas artesanais
 
 O objetivo deste projeto é avaliar o desenvolvimento de uma aplicação java utilizando Spring e APIs.
